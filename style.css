@@ -5,26 +5,12 @@
     margin: 0;
     padding: 0;
 }
-@media screen and (max-width: 1024px) {
-
-}
-
-@media screen and (min-width: 768px) {
-    html { font-size: 50%; }
-}
-
-@media screen and (min-width: 480px) {
-    html { font-size: 43.75%; }
-}
-
-
 
 html {
     -moz-text-size-adjust: none;
     -webkit-text-size-adjust: none;
     text-size-adjust: none;
     font-family: sans-serif;
-    font-size: 62.5%;
 }
 
 body,
@@ -96,18 +82,24 @@ textarea:not([rows]) {
 }
 
 .content {
+    min-height: 100vh;
     background: #020024;
-    background: linear-gradient(
-        222deg,
-        rgba(2, 0, 36, 1) 0%,
-        rgba(9, 9, 121, 1) 35%,
-        rgba(0, 212, 255, 1) 100%
-    );
+    background: linear-gradient(222deg,
+            rgba(2, 0, 36, 1) 0%,
+            rgba(9, 9, 121, 1) 35%,
+            rgba(0, 212, 255, 1) 100%);
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     color: white;
+
+    max-width: 1440px;
+    margin: 0 auto;
+}
+
+.container {
+    padding:0 2rem;
 }
 
 .sizes {
@@ -119,4 +111,28 @@ textarea:not([rows]) {
     padding: 1rem 2rem;
     border-radius: 1rem;
     background-color: black;
+}
+@media screen and (min-width: 1024px) {
+    .content {
+        font-size: 62.5%;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .content {
+        font-size: 56.25%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .content {
+        font-size: 50%;
+        max-width: 480px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .content {
+        font-size: 43.75%;
+    }
 }
